@@ -12,6 +12,12 @@ public class Plaintiff {
         Pid = pid;
         Pname = pname;
     }
+
+    public void Debate(){
+        System.out.print("原告：");
+        System.out.println("他偷了我的钱");
+    }
+
     /**
      * setter and getter 方法
      */

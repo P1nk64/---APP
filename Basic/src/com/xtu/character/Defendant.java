@@ -1,4 +1,7 @@
 package com.xtu.character;
+
+import java.awt.*;
+
 /**
  * 被告类
  * @author P1nk64
@@ -12,6 +15,11 @@ public class Defendant {
         Did = did;
         Dname = dname;
     }
+    public void Debate(){
+        System.out.print("被告人：");
+        System.out.println("我没偷钱");
+    }
+
     /**
      * setter and getter 方法
      */

@@ -27,12 +27,14 @@ public class ProcessFuction {
         //宣读勘验笔录。其间，当事人经法庭许可，可以向证人、鉴定人、勘验人发问
 
         //原告及其诉讼代理人发言
-
+        plaintiff.Debate();
         //被告及其诉讼代理人答辩
-
+        defendant.Debate();
         //互相辩论。法庭辩论终结后，由审判长按照原告、被告、第三人的先后顺序征询各方最后意见
 
+
         //评议和宣判
+        judge.Trial();
     }
 
 

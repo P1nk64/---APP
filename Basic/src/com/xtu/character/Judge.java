@@ -14,6 +14,10 @@ public class Judge {
         Jname = jname;
     }
 
+    public void Trial(){
+        System.out.println("法官：被告人有期徒刑5年，缓刑2年执行");
+    }
+
     /**
      * setter and getter 方法
      */
