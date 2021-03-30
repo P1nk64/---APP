@@ -12,6 +12,21 @@ public class Clerk {
         Cid = cid;
         Cname = cname;
     }
+    /**
+     * @Title：Announce
+     * @Description: 用于庭审开始的宣读程序
+     * @Param: 法官名，被告人名，原告名，书记员名
+     * @author P1nk64
+     */
+    public void Announce(String judge,String defendant,String plaintiff,String clerk){
+        System.out.println("书记员：现在开庭");
+        System.out.println("书记员：法官是"+judge);
+        System.out.println("书记员：被告人是"+defendant);
+        System.out.println("书记员：原告是"+plaintiff);
+        System.out.println("书记员：书记员是"+clerk);
+        System.out.println("书记员：公布法庭纪律如下");
+        System.out.println("书记员：xxxxxx");
+    }
 
     /**
      * setter and getter 方法
