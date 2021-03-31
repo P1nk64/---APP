@@ -68,15 +68,15 @@ public class JDBCConn {
 
             ps.setString(2,userpwd);
             //4、执行SQL
-            ResultSet count = ps.executeQuery();
+            rs = ps.executeQuery();
 
-            if(count.next()){
+            if(rs.next()){
                 System.out.println("登录成功");
             }
             else {
                 System.out.println("登陆失败");
             }
-            System.out.println(count);
+            //System.out.println(rs);
         } catch (Exception e) {
             System.out.println("输入有误");
             e.printStackTrace();
