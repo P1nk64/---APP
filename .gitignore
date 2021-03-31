@@ -1,0 +1,21 @@
+# Compiled class file
+*.class
+
+# Intellij
+*.ipr
+*.iml
+*.iws
+.idea/
+
+# out
+**/out/
+
+# others
+*.jar
+*.war
+*.zip
+*.tar
+*.tar.gz
+*.pid
+*.orig
+temp/
