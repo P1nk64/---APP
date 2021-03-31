@@ -4,8 +4,7 @@ import com.xtu.loginfunction.JDBCConn;
 
 public class MainFuction {
     public static void main(String[] args) {
-        JDBCConn.SignUp();
-        JDBCConn.SignIn();
+
         ProcessFuction pf = new ProcessFuction();
     }
 }

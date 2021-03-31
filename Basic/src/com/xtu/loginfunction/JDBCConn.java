@@ -43,7 +43,7 @@ public class JDBCConn {
         }
     }
 
-    public static void SignIn(){
+    public static int SignIn(){
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -53,7 +53,9 @@ public class JDBCConn {
 
         //2、获取连接
         // conn = DriverManager.getConnection(url,user,password);
+        int flag = 0;
         try {
+
             conn = DBUtil.getConnection();
             String sql = "select *  from user Where (user_id = ? AND user_pwd = ?)";
             Scanner input = new Scanner(System.in);
@@ -72,9 +74,11 @@ public class JDBCConn {
 
             if(rs.next()){
                 System.out.println("登录成功");
+                flag = 1;
             }
             else {
                 System.out.println("登陆失败");
+
             }
             //System.out.println(rs);
         } catch (Exception e) {
@@ -82,7 +86,9 @@ public class JDBCConn {
             e.printStackTrace();
         }finally {
             DBUtil.close(conn,ps,rs);
+            return flag;
         }
+
     }
 
 }

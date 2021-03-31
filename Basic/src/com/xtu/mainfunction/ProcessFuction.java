@@ -1,10 +1,40 @@
 package com.xtu.mainfunction;
 
 import com.xtu.character.*;
+import com.xtu.loginfunction.JDBCConn;
+
+import java.util.Scanner;
 
 public class ProcessFuction {
 
     public ProcessFuction() {
+        /**
+         * 登录
+         */
+
+        int loginflag = 0;
+        while(loginflag == 0){
+            System.out.println("1:注册");
+            System.out.println("2:登录");
+            Scanner sc = new Scanner(System.in);
+            String Slc = sc.nextLine();
+            int loginchoose = Integer.parseInt(Slc);
+
+            switch (loginchoose){
+                case 1:
+                    JDBCConn.SignUp();
+                    break;
+                case 2:
+                    loginflag = JDBCConn.SignIn();
+                    break;
+                default:
+                    System.out.println("你打jb呢");
+                    break;
+            }
+
+
+        }
+
         Clerk clerk = new Clerk("01","书记员01");
 
         Defendant defendant = new Defendant("01","被告人01");
