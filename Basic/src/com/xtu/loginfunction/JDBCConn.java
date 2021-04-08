@@ -1,5 +1,6 @@
 package com.xtu.loginfunction;
 
+import com.xtu.dao.DeptDao;
 import com.xtu.utils.DBUtil;
 
 import java.sql.*;
@@ -8,7 +9,17 @@ import java.util.Scanner;
 
 public class JDBCConn {
     public static void SignUp(){
-        Connection conn = null;
+        Scanner input = new Scanner(System.in);
+        DeptDao dao = new DeptDao();
+        //int user_id = (Integer) input.next();
+        System.out.println("输入证件号");
+        int user_id = Integer.parseInt(input.next());
+        System.out.println("输入姓名");
+        String user_name = input.next();
+        System.out.println("输入密码");
+        String user_pwd = input.next();
+        dao.add(user_id,user_name,user_pwd);
+        /*Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
 
@@ -40,7 +51,7 @@ public class JDBCConn {
             e.printStackTrace();
         }finally {
             DBUtil.close(conn,ps,rs);
-        }
+        }*/
     }
 
     public static int SignIn(){
@@ -90,5 +101,7 @@ public class JDBCConn {
         }
 
     }
+
+
 
 }
