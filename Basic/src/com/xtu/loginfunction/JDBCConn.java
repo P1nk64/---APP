@@ -55,7 +55,23 @@ public class JDBCConn {
     }
 
     public static int SignIn(){
-        Connection conn = null;
+        Scanner input = new Scanner(System.in);
+        DeptDao dao = new DeptDao();
+        //int user_id = (Integer) input.next();
+        System.out.println("输入证件号");
+        int user_id = Integer.parseInt(input.next());
+        System.out.println("输入密码");
+        String user_pwd = input.next();
+        int result = dao.search(user_id,user_pwd);
+        if (result == 1){
+            System.out.println("登录成功");
+        }
+        else {
+            System.out.println("登录失败,请查看账号密码是否有误");
+        }
+        return result;
+
+        /*Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
 
@@ -98,8 +114,32 @@ public class JDBCConn {
         }finally {
             DBUtil.close(conn,ps,rs);
             return flag;
-        }
+        }*/
 
+    }
+
+    public static void DeleteUser(){
+        Scanner input = new Scanner(System.in);
+        DeptDao dao = new DeptDao();
+        //int user_id = (Integer) input.next();
+        System.out.println("输入证件号");
+        int user_id = Integer.parseInt(input.next());
+        System.out.println("输入密码");
+        String user_pwd = input.next();
+        dao.delete(user_id,user_pwd);
+    }
+
+    public static void UpdateUser(){
+        Scanner input = new Scanner(System.in);
+        DeptDao dao = new DeptDao();
+        //int user_id = (Integer) input.next();
+        System.out.println("输入证件号");
+        int user_id = Integer.parseInt(input.next());
+        System.out.println("输入旧密码");
+        String user_pwd = input.next();
+        System.out.println("输入新密码");
+        String new_pwd = input.next();
+        dao.update(user_id,user_pwd,new_pwd);
     }
 
 
